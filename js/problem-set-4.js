@@ -5,7 +5,10 @@
 function hello() {
 
   // WRITE YOUR EXERCISE 1 CODE HERE
-
+  {
+    var hi = document.getElementById("output1") ;
+    hi.innerHTML = "Hello, AP Computer Science Principles!" ;
+  }
   ////////////////// DO NOT MODIFY
   check("hello"); // DO NOT MODIFY
   ////////////////// DO NOT MODIFY
@@ -22,7 +25,9 @@ function helloAgain() {
   //////////// DO NOT MODIFY      in response to your prompt.
 
   // WRITE YOUR EXERCISE 2 CODE HERE
-
+  name = prompt("Please Enter Your Name") ;
+  var again = document.getElementById("output2") ;
+  again.innerHTML = "Hello, " + name + "!" ;
   ///////////////////////////// DO NOT MODIFY
   check("helloAgain", name); // DO NOT MODIFY
   ///////////////////////////// DO NOT MODIFY
@@ -42,7 +47,9 @@ function celsius() {
   // (inclusive), and rounds this value to 2 decimal places.
 
   // WRITE YOUR EXERCISE 3 CODE HERE
-
+  fahr = ((cels * 9/5) + 32).toFixed(2) ;
+  var total = document.getElementById("output3") ;
+  total.innerHTML = (cels + " degrees Celsius equals " + fahr + " degrees Fahrenheit.") ;
   ////////////////////////// DO NOT MODIFY
   check("celsius", cels); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -62,7 +69,9 @@ function fahrenheit() {
   // (inclusive), and rounds this value to 2 decimal places.
 
   // WRITE YOUR EXERCISE 4 CODE HERE
-
+  cels = ((fahr - 32) * 5/9).toFixed(2) ;
+  var total = document.getElementById("output4") ;
+  total.innerHTML = (fahr + " degrees Fahrenheit equals " + cels + " degrees Celsius.") ;
   ///////////////////////////// DO NOT MODIFY
   check("fahrenheit", fahr); // DO NOT MODIFY
   ///////////////////////////// DO NOT MODIFY
@@ -86,7 +95,7 @@ function inches() {
   ////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 5 CODE HERE
-
+  
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
