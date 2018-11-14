@@ -134,7 +134,13 @@ function centimeters() {
   /////////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 6 CODE HERE
-
+let km = inches / 100000
+  km = (Math.floor(km))
+  let m = inches % 100000 / 100
+  m = (Math.floor(m))
+  centimeters = (Math.floor(centimeters % 100000 % 100))
+  let dist = document.getElementById("output6") ;
+  dist.innerHTML = ("Kilometers: " + km + "<br/>" + "Meters: " + m + "<br/>" + "Centimeters: " + centimeters) ;
   /////////////////////////////// DO NOT MODIFY
   check("centimeters", input); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
