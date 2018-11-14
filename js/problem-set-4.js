@@ -134,10 +134,8 @@ function centimeters() {
   /////////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 6 CODE HERE
-  let km = centimeters / 100000
-  km = (Math.floor(km))
-  let m = centimeters % 100000 / 100
-  m = (Math.floor(m))
+  let km = (Math.floor(centimeters / 100000))
+  let m = (Math.floor(centimeters % 100000 / 100))
   centimeters = (Math.floor(centimeters % 100000 % 100))
   let dist = document.getElementById("output6") ;
   dist.innerHTML = ("Kilometers: " + km + "<br/>" + "Meters: " + m + "<br/>" + "Centimeters: " + centimeters) ;
