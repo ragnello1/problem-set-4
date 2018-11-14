@@ -6,7 +6,7 @@ function hello() {
 
   // WRITE YOUR EXERCISE 1 CODE HERE
   {
-    var hi = document.getElementById("output1") ;
+    let hi = document.getElementById("output1") ;
     hi.innerHTML = "Hello, AP Computer Science Principles!" ;
   }
   ////////////////// DO NOT MODIFY
@@ -20,13 +20,13 @@ function hello() {
 
 function helloAgain() {
 
-  //////////// DO NOT MODIFY      Use the @name variable to store
+  //////////// DO NOT MODIFY      Use the @name letiable to store
   let name; // DO NOT MODIFY      the value that the user enters
   //////////// DO NOT MODIFY      in response to your prompt.
 
   // WRITE YOUR EXERCISE 2 CODE HERE
   name = prompt("Please Enter Your Name") ;
-  var again = document.getElementById("output2") ;
+  let again = document.getElementById("output2") ;
   again.innerHTML = "Hello, " + name + "!" ;
   ///////////////////////////// DO NOT MODIFY
   check("helloAgain", name); // DO NOT MODIFY
@@ -48,7 +48,7 @@ function celsius() {
 
   // WRITE YOUR EXERCISE 3 CODE HERE
   fahr = ((cels * 9/5) + 32).toFixed(2) ;
-  var total = document.getElementById("output3") ;
+  let total = document.getElementById("output3") ;
   total.innerHTML = (cels + " degrees Celsius equals " + fahr + " degrees Fahrenheit.") ;
   ////////////////////////// DO NOT MODIFY
   check("celsius", cels); // DO NOT MODIFY
@@ -70,7 +70,7 @@ function fahrenheit() {
 
   // WRITE YOUR EXERCISE 4 CODE HERE
   cels = ((fahr - 32) * 5/9).toFixed(2) ;
-  var total = document.getElementById("output4") ;
+  let total = document.getElementById("output4") ;
   total.innerHTML = (fahr + " degrees Fahrenheit equals " + cels + " degrees Celsius.") ;
   ///////////////////////////// DO NOT MODIFY
   check("fahrenheit", fahr); // DO NOT MODIFY
@@ -95,7 +95,22 @@ function inches() {
   ////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 5 CODE HERE
-  
+  // feet = (Math.floor(inches / 12)) ;
+  // inches = inches % feet ;
+  // yard = (Math.floor(feet / 3)) ;
+  // feet = feet % yard ;
+  // mile = (Math.floor(yard / 1760)) ;
+  // yard = yard % mile ;
+  let mile = inches / 63360
+  mile = (Math.floor(mile))
+  let yard = inches % 63360 / 36
+  yard = (Math.floor(yard))
+  let feet = inches % 63360 % 36 / 12
+  feet = (Math.floor(feet))
+  inches = (Math.floor(inches % 63360 % 36 % 12))
+  let dist = document.getElementById("output5") ;
+  dist.innerHTML = ("Miles: " + mile + "<br/>" + "Yards: " + yard + "<br/>" + "Feet: " + feet + "<br/>" + "Inches: " + inches) ;
+
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
