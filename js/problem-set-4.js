@@ -162,7 +162,7 @@ function fluidOunces() {
   let cups = (Math.floor(fluidOunces % 128 % 32 % 16 / 8.115))
   fluidOunces = (Math.floor(fluidOunces % 128 % 100 % 32 % 16 % 8.115))
   let all = document.getElementById("output7") ;
-  all.innerHTML = ("Gallons: " + gall + "<br/>" + "Quarts: " + quart + "<br/>" + "Pints: " + pint + <br/> + "Cups: " + cups + <br/> + "Fluid Ounces: " + fluidOunces) ;
+  all.innerHTML = ("Gallons: " + gall + "<br/>" + "Quarts: " + quart + "<br/>" + "Pints: " + pint + "<br/>" + "Cups: " + cups + "<br/>" + "Fluid Ounces: " + fluidOunces) ;
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
