@@ -241,10 +241,11 @@ function change() {
   ////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 10 CODE HERE
-  let quarters = (Math.floor(amount/.25)) ;
-  let dimes = (Math.floor((amount-(quarters*.25))/.10)) ;
-  let nickels = (Math.floor((amount-(quarters*.25)-(dimes*.10))/.5)) ;
-  let pennies = (Math.floor((amount-(quarters*.25)-(dimes*.10)-(nickels*.5))/.01)) ;
+  amount *= 100
+  let quarters = Math.floor(amount / 25) ;
+  let dimes = Math.floor(amount % 25 / 10) ;
+  let nickels = Math.floor(amount % 25 % 10 / 5) ;
+  let pennies = Math.floor(amount % 25 % 10 % 5) ;
   let coins = (quarters + dimes + nickels + pennies) ;
   let total = document.getElementById("output10") ;
     if (quarters + dimes + nickels + pennies < 0.1) {
