@@ -185,7 +185,7 @@ function ounces() {
   // WRITE YOUR EXERCISE 8 CODE HERE
   let tons = (Math.floor(ounces / 32000)) ;
   let pound = (Math.floor(ounces % 32000 / 16)) ;
-  ounces = (Math.floor(ounces % 100000 % 16)) ;
+  ounces = (Math.floor(ounces % 32000 % 16)) ;
   let total = document.getElementById("output8") ;
   total.innerHTML = ("Tons: " + tons + "<br/>" + "Pounds: " + pound + "<br/>" + "Ounces: " + ounces) ;
   ////////////////////////// DO NOT MODIFY
