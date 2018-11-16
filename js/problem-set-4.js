@@ -95,15 +95,12 @@ function inches() {
   ////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 5 CODE HERE
-  let mile = inches / 63360
-  mile = (Math.floor(mile))
-  let yard = inches % 63360 / 36
-  yard = (Math.floor(yard))
-  let feet = inches % 63360 % 36 / 12
-  feet = (Math.floor(feet))
-  inches = (Math.floor(inches % 63360 % 36 % 12))
-  let dist = document.getElementById("output5") ;
-  dist.innerHTML = ("Miles: " + mile + "<br/>" + "Yards: " + yard + "<br/>" + "Feet: " + feet + "<br/>" + "Inches: " + inches) ;
+  let mile = (Math.floor(inches / 63360)) ;
+  let yard = (Math.floor(inches % 63360 / 36)) ;
+  let feet = (Math.floor(inches % 63360 % 36 / 12)) ;
+  inches = (Math.floor(inches % 63360 % 36 % 12)) ;
+  let total = document.getElementById("output5") ;
+  total.innerHTML = ("Miles: " + mile + "<br/>" + "Yards: " + yard + "<br/>" + "Feet: " + feet + "<br/>" + "Inches: " + inches) ;
 
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
@@ -128,11 +125,11 @@ function centimeters() {
   /////////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 6 CODE HERE
-  let kilom = (Math.floor(centimeters / 100000))
-  let met = (Math.floor(centimeters % 100000 / 100))
-  centimeters = (Math.floor(centimeters % 100000 % 100))
-  let tot = document.getElementById("output6") ;
-  tot.innerHTML = ("Kilometers: " + kilom + "<br/>" + "Meters: " + met + "<br/>" + "Centimeters: " + centimeters) ;
+  let kilom = (Math.floor(centimeters / 100000)) ;
+  let met = (Math.floor(centimeters % 100000 / 100)) ;
+  centimeters = (Math.floor(centimeters % 100000 % 100)) ;
+  let total = document.getElementById("output6") ;
+  total.innerHTML = ("Kilometers: " + kilom + "<br/>" + "Meters: " + met + "<br/>" + "Centimeters: " + centimeters) ;
   /////////////////////////////// DO NOT MODIFY
   check("centimeters", input); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
@@ -156,13 +153,13 @@ function fluidOunces() {
   /////////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 7 CODE HERE
-  let gall = (Math.floor(fluidOunces / 128))
-  let quart = (Math.floor(fluidOunces % 128 / 32))
-  let pint = (Math.floor(fluidOunces % 128 % 32 / 16))
-  let cups = (Math.floor(fluidOunces % 128 % 32 % 16 / 8.115))
-  fluidOunces = (Math.floor(fluidOunces % 128 % 100 % 32 % 16 % 8.115))
-  let all = document.getElementById("output7") ;
-  all.innerHTML = ("Gallons: " + gall + "<br/>" + "Quarts: " + quart + "<br/>" + "Pints: " + pint + "<br/>" + "Cups: " + cups + "<br/>" + "Fluid Ounces: " + fluidOunces) ;
+  let gall = (Math.floor(fluidOunces / 128)) ;
+  let quart = (Math.floor(fluidOunces % 128 / 32)) ;
+  let pint = (Math.floor(fluidOunces % 128 % 32 / 16)) ;
+  let cups = (Math.floor(fluidOunces % 128 % 32 % 16 / 8)) ;
+  fluidOunces = (Math.floor(fluidOunces % 128 % 32 % 16 % 8)) ;
+  let total = document.getElementById("output7") ;
+  total.innerHTML = ("Gallons: " + gall + "<br/>" + "Quarts: " + quart + "<br/>" + "Pints: " + pint + "<br/>" + "Cups: " + cups + "<br/>" + "Fluid Ounces: " + fluidOunces) ;
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
@@ -186,7 +183,11 @@ function ounces() {
   ////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 8 CODE HERE
-
+  let tons = (Math.floor(ounces / 32000)) ;
+  let pound = (Math.floor(ounces % 32000 / 16)) ;
+  ounces = (Math.floor(ounces % 100000 % 16)) ;
+  let total = document.getElementById("output8") ;
+  total.innerHTML = ("Tons: " + tons + "<br/>" + "Pounds: " + pound + "<br/>" + "Ounces: " + ounces) ;
   ////////////////////////// DO NOT MODIFY
   check("ounces", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -210,7 +211,13 @@ function money() {
   /////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 9 CODE HERE
-
+  let doll = (Math.floor(pennies / 100)) ;
+  let quarters = (Math.floor(pennies % 100 / 25)) ;
+  let dime = (Math.floor(pennies % 100 % 25 / 10)) ;
+  let nick = (Math.floor(pennies % 100 % 25 % 10 / 5)) ;
+  pennies = (Math.floor(pennies % 100 % 25 % 10 % 5)) ;
+  let total = document.getElementById("output9") ;
+  total.innerHTML = ("Dollars: " + doll + "<br/>" + "Quarters: " + quarters + "<br/>" + "Dimes: " + dime + "<br/>" + "Nickels: " + nick + "<br/>" + "Pennies: " + pennies) ;
   ///////////////////////// DO NOT MODIFY
   check("money", input); // DO NOT MODIFY
   ///////////////////////// DO NOT MODIFY
@@ -234,7 +241,24 @@ function change() {
   ////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 10 CODE HERE
-
+  let quarters = (Math.floor(amount/.25)) ;
+  let dimes = (Math.floor((amount-(quarters*.25))/.10)) ;
+  let nickels = (Math.floor((amount-(quarters*.25)-(dimes*.10))/.5)) ;
+  let pennies = (Math.floor((amount-(quarters*.25)-(dimes*.10)-(nickels*.5))/.01)) ;
+  let coins = (quarters + dimes + nickels + pennies) ;
+  let total = document.getElementById("output10") ;
+    if (quarters + dimes + nickels + pennies < 0.1) {
+        total.innerHTML = (coins + " coins.");
+    }
+    else {
+      if (quarters + dimes + nickels + pennies < 1.1) {
+        total.innerHTML = (coins + " coin.");
+      }
+      else {
+        total.innerHTML = (coins + " coins.");
+      }
+      }
+  ///////////////////////// DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
